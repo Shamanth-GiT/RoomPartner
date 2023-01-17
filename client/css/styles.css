@@ -1,0 +1,102 @@
+body{
+    background-color: #e0dede;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+h5{
+    font-size: 1.5rem;
+}
+
+button{
+    font-size: 1rem;
+}
+
+/* Styling for Materials Icons */
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 48
+}
+
+#status{
+    font-variation-settings: 
+    'FILL' 1,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 48;
+
+    color: red;
+}
+
+#messenger-icon{
+    margin-right: 10px;
+    background-color: #D8D9CF;
+    padding-top: 5px;
+}
+
+#settings-icon{
+    margin-right: 10px;
+    background-color: #D8D9CF;
+    padding-top: 5px;
+}
+
+#friend-add-icon{
+    margin-right: 10px;
+    background-color: #D8D9CF;
+    padding-top: 5px;
+}
+/*  */
+
+
+.card{
+    margin: 100px auto auto auto;
+    border-color: transparent;
+    background-color: inherit;
+}
+
+.card-body{
+    background-color: white;
+    text-align: center;
+    padding-bottom: 0;
+}
+
+.card-footer{
+    background-color: white;
+}
+
+.prof-it{
+    margin-right: 10px;
+    border-width: 4px;
+    border-color: black;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+}
+
+.prof-background-pic{
+    height: 200px;
+    background-image:url(/client/imgs/maxresdefault.jpg); 
+    background-position: center; 
+    background-size: cover; 
+    background-repeat: no-repeat;
+    border-top-left-radius: 0.4rem;
+    border-top-right-radius: 0.4rem; 
+}
+
+.avatar{
+    border-style: solid;
+    border-radius: 50%;
+    border-color: white;
+    border-width: 4px;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+.avatar-pic {
+    width: 150px;
+}
+
+
+
