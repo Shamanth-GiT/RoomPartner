@@ -27,7 +27,7 @@ button{
     'GRAD' 0,
     'opsz' 48;
 
-    color: red;
+    color: green;
 }
 
 #messenger-icon{
@@ -54,6 +54,10 @@ button{
     margin: 100px auto auto auto;
     border-color: transparent;
     background-color: inherit;
+}
+
+.card-header{
+    background-color: white;
 }
 
 .card-body{
@@ -96,6 +100,13 @@ button{
 
 .avatar-pic {
     width: 150px;
+}
+
+#stack_card_2{
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: 0;
+    padding-bottom: 0;
 }
 
 
