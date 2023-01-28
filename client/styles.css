@@ -81,7 +81,7 @@ button{
 
 .prof-background-pic{
     height: 200px;
-    background-image:url(/client/imgs/maxresdefault.jpg); 
+    background-image:url(./imgs/maxresdefault.jpg); 
     background-position: center; 
     background-size: cover; 
     background-repeat: no-repeat;
