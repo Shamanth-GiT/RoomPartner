@@ -1,11 +1,3 @@
-/*
-    Used to show activity status.
-*/
-function blinker(blink_elem){
-    blink_elem.style.color= (blink_elem.style.color==='green'?'white':'green');
-    setTimeout(() => blinker(blink_elem), 600);
-}
-
 function prof_item_changer(elem){
     let stack_card = document.getElementById("stack_card_2");
     let lst = document.getElementsByClassName("prof-it");
@@ -21,4 +13,4 @@ function prof_item_changer(elem){
     stack_card.lastElementChild.firstElementChild.innerHTML = elem.innerHTML;
 }
 
-export{blinker, prof_item_changer};
+export{prof_item_changer};
