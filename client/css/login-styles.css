@@ -1,0 +1,24 @@
+body{
+    background-color: #e0dede;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+h5{
+    font-size: 1.5rem;
+}
+
+button{
+    font-size: 1rem;
+}
+
+img{
+    padding: 10px 10px 10px 10px;
+}
+
+.card{
+    margin: 20vh auto auto auto;
+    padding: auto 10px 10px 10px;
+    border-radius: 15px;
+    border-style: solid;
+    border-color: black;
+}
