@@ -2,6 +2,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const User = require("./users");
 const path = require("path");
+const md5 = require("md5");
 const PORT = process.env.PORT || 3000;
 
 const app = express();
@@ -22,7 +23,7 @@ app.route("/")
             first_name: obj['first-name'],
             last_name: obj['last-name'],
             email: obj['email'],
-            password: obj['password']
+            password: md5(obj['password'])
         });
         user.save(err => {
             if(err) console.log(err);
@@ -38,7 +39,7 @@ app.route("/login")
         let obj = req.body;
 
         const username = obj['username'];
-        const password = obj['password'];
+        const password = md5(obj['password']);
 
         User.findOne({email: username}, 
             (err, foundUser) => {
