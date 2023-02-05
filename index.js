@@ -50,7 +50,7 @@ app.route("/login")
             (err, foundUser) => {
                 if(err) console.log(err);
                 else if(foundUser){
-                    bcrypt.compare(password, foundUser['password'], (err, result) => {
+                    bcrypt.compare(password, foundUser['password'], (error, result) => {
                         if(result) res.sendFile(path.join(__dirname, 'client/views/home.html'));
                     });
                 } 
