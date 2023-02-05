@@ -2,7 +2,9 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const User = require("./users");
 const path = require("path");
-const md5 = require("md5");
+const bcrypt = require("bcrypt");
+const saltRounds = 10;
+
 const PORT = process.env.PORT || 3000;
 
 const app = express();
@@ -18,16 +20,19 @@ app.route("/")
     })
     .post((req, res) => {
         let obj = req.body;
-        console.log(obj);
-        const user = new User({
-            first_name: obj['first-name'],
-            last_name: obj['last-name'],
-            email: obj['email'],
-            password: md5(obj['password'])
-        });
-        user.save(err => {
-            if(err) console.log(err);
-            else res.sendFile(path.join(__dirname, 'client/views/home.html'));
+        
+        bcrypt.hash(obj['password'], saltRounds, (err, hash) => {
+            const user = new User({
+                first_name: obj['first-name'],
+                last_name: obj['last-name'],
+                email: obj['email'],
+                password: hash
+            });
+
+            user.save(err => {
+                if(err) console.log(err);
+                else res.sendFile(path.join(__dirname, 'client/views/home.html'));
+            });
         });
      });
 
@@ -39,13 +44,15 @@ app.route("/login")
         let obj = req.body;
 
         const username = obj['username'];
-        const password = md5(obj['password']);
+        const password = obj['password'];
 
         User.findOne({email: username}, 
             (err, foundUser) => {
                 if(err) console.log(err);
                 else if(foundUser){
-                    if(foundUser.password === password) res.sendFile(path.join(__dirname, 'client/views/home.html'));
+                    bcrypt.compare(password, foundUser['password'], (err, result) => {
+                        if(result) res.sendFile(path.join(__dirname, 'client/views/home.html'));
+                    });
                 } 
             });
     });
